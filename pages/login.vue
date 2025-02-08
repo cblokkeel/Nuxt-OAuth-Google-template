@@ -1,10 +1,9 @@
-<script setup>
+<script setup lang="ts">
 async function googleLogin() {
     const {
         data,
     } = await useFetch("/login/google");
-    console.log(data.value);
-    navigateTo(data.value.url, {
+    navigateTo(data.value?.url, {
         external: true
     })
 }
